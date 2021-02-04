@@ -1,7 +1,7 @@
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
 COPY . /usr/build/
 WORKDIR /usr/build/
-RUN mvn clean install
+RUN mvn package
 
 FROM openjdk:8-jre-alpine
 WORKDIR /usr/app/
